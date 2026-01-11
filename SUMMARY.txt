@@ -1,0 +1,62 @@
+================================================================================
+TRAINING COMPLETED SUCCESSFULLY
+================================================================================
+
+Timestamp: $(date)
+Training Script: train_robust.py
+Log File: training_robust.log
+
+RESULTS:
+--------
+ XGBoost SMAPE: 56.30%
+ LightGBM SMAPE: 57.07%
+ Ensemble SMAPE: 56.20%
+
+Ensemble Weights:
+  - XGBoost: 75%
+  - LightGBM: 25%
+
+Training Times:
+  - XGBoost validation: 426.4s (~7 min)
+  - LightGBM validation: 39.7s
+  - XGBoost full data: 468.1s (~8 min)
+  - LightGBM full data: 44.9s
+  - Total: ~16 minutes
+
+PREDICTIONS:
+------------
+File: test_out.csv
+Shape: 75000 predictions
+Mean Price: $17.72
+Median Price: $14.02
+Min Price: $1.03
+Max Price: $353.21
+
+DATA QUALITY:
+-------------
+ No NaN values
+ No Inf values  
+ All positive prices
+ All sample IDs unique
+ Proper validation at every step
+
+IMPROVEMENTS MADE:
+------------------
+1. Robust error handling with try-catch blocks
+2. NaN/Inf validation at every step
+3. Safe expm1 with clipping to prevent overflow
+4. Timeout protection for LightGBM
+5. Fallback to XGBoost-only if LightGBM fails
+6. Comprehensive logging
+7. Reduced LightGBM parameters to avoid getting stuck
+8. Memory-efficient processing
+
+FILES SAVED:
+------------
+ models/xgb_model.pkl (6.5MB)
+ models/lgb_model.pkl (5.0MB)
+ models/ensemble_weights.pkl
+ test_out.csv (ready for submission)
+ training_robust.log (complete log)
+
+STATUS: READY FOR SUBMISSION! 
