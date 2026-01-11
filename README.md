@@ -74,4 +74,8 @@ While the performance could not be pushed further within the competition timelin
 These challenges closely mirror real-world ML problems and influenced design and trade-offs throughout the project.
 
 
+## Code and docs
 
+- I have uploaded the codes(.py) for the pipeline, training, processing.
+- The summary and Features (.txt) files have the details about the program pipeline and features of the training.
+- The csv file has the output after the processing, training, testing.
